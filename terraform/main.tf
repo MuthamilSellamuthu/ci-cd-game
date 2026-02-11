@@ -3,11 +3,11 @@ provider "aws" {
 }
 
 resource "aws_instance" "game_server" {
-  ami           = "ami-0317b0f0a0144b137" 
+  ami           = "ami-019715e0d74f695be" 
   instance_type = "t3.small"
-  key_name      = "jenkinskkp"
+  key_name      = "xyz"
 
-  security_groups = [aws_security_group.mygame.name]
+  security_groups = [aws_security_group.mehu.name]
 
   user_data = <<-EOF
               #!/bin/bash
@@ -22,8 +22,8 @@ resource "aws_instance" "game_server" {
   }
 }
 
-resource "aws_security_group" "mygame" {
-  name = "mygame"
+resource "aws_security_group" "mehu" {
+  name = "mehu"
 
   ingress {
     from_port   = 22
